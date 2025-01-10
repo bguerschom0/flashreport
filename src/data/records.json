@@ -1,0 +1,17 @@
+
+{
+  "records": [
+    {
+      "id": 1,
+      "createdOn": "2025-01-10T00:00:00.000Z",
+      "createdBy": 1,
+      "title": "Sample Red Flag",
+      "type": "red-flag",
+      "location": "1.2345,-1.2345",
+      "status": "draft",
+      "images": [],
+      "videos": [],
+      "comment": "Sample red flag report"
+    }
+  ]
+}
