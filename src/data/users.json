@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "John",
+      "lastname": "Doe",
+      "email": "john@example.com",
+      "phoneNumber": "+1234567890",
+      "username": "johndoe",
+      "password": "password123",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "firstname": "Admin",
+      "lastname": "User",
+      "email": "admin@flashreport.com",
+      "phoneNumber": "+1987654321",
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ]
+}
