@@ -1,29 +1,60 @@
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import './styles/auth.css';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import Login from './components/auth/Login';
 
-// Protected Route component
+// Protected Route wrapper
 const ProtectedRoute = ({ children }) => {
-  const user = JSON.parse(localStorage.getItem('user'));
-  if (!user) {
-    return <Navigate to="/login" replace />;
+  const { user, loading } = useAuth();
+  
+  if (loading) {
+    return <div>Loading...</div>;
   }
+  
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
+  
   return children;
 };
 
-const App = () => {
+// Temporary Dashboard component
+const Dashboard = () => {
+  const { user, logout } = useAuth();
+  
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/" element={<Navigate to="/login" replace />} />
-        {/* Add more routes as needed */}
-      </Routes>
-    </Router>
+    <div className="p-4">
+      <h1>Welcome, {user.firstname}!</h1>
+      <button 
+        onClick={logout}
+        className="mt-4 px-4 py-2 bg-red-600 text-white rounded"
+      >
+        Logout
+      </button>
+    </div>
   );
 };
+
+function App() {
+  return (
+    <Router>
+      <AuthProvider>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        </Routes>
+      </AuthProvider>
+    </Router>
+  );
+}
 
 export default App;
