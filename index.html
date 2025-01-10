@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FlashReport - Report corruption and issues that need government intervention" />
+    <meta name="theme-color" content="#2563eb" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="FlashReport" />
+    <meta property="og:description" content="Report corruption and issues that need government intervention" />
+    <meta property="og:url" content="https://flashreport.vercel.app" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>FlashReport - Fight Corruption with Transparency</title>
+
+    <style>
+      /* Minimal CSS reset and base styles */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Loading state styles */
+      #root:empty {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #root:empty::after {
+        content: "Loading...";
+        color: #2563eb;
+        font-size: 1.125rem;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Fallback for JavaScript disabled browsers -->
+    <noscript>
+      <div style="padding: 2rem; text-align: center;">
+        <h1>JavaScript Required</h1>
+        <p>
+          We're sorry, but FlashReport requires JavaScript to function properly. 
+          Please enable JavaScript to continue.
+        </p>
+      </div>
+    </noscript>
+  </body>
+</html>
