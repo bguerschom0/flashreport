@@ -2,23 +2,14 @@
   "users": [
     {
       "id": 1,
-      "firstname": "John",
-      "lastname": "Doe",
-      "email": "john@example.com",
-      "phoneNumber": "+1234567890",
-      "username": "johndoe",
-      "password": "password123",
-      "role": "user"
-    },
-    {
-      "id": 2,
       "firstname": "Admin",
       "lastname": "User",
       "email": "admin@flashreport.com",
-      "phoneNumber": "+1987654321",
+      "phoneNumber": "+1234567890",
       "username": "admin",
-      "password": "admin123",
-      "role": "admin"
+      "password": "hashed_password_here",
+      "isAdmin": true,
+      "createdAt": "2025-01-10T00:00:00.000Z"
     }
   ]
 }
